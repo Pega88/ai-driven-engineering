@@ -52,7 +52,7 @@ They run in parallel, on the same codebase, completely isolated. **No conflicts.
 
 This workflow is optimized for tools like [`wt` (by John Lindquist)](https://www.npmjs.com/package/wt) for managing worktrees, but standard `git worktree` commands work perfectly too.
 
-The `/implement` command [linked here](workflow-extension/commands/implement.toml) is designed to handle this isolation automatically.
+The `/implement` command [linked here](commands/engineering/implement.toml) is designed to handle this isolation automatically.
 
 ---
 
