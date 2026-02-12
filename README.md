@@ -8,6 +8,22 @@ It integrates seamlessly with **Linear** (for project management) and **GitHub**
 
 ---
 
+## 📦 Installation
+
+You can install this extension directly from the repository:
+
+```bash
+gemini extensions install https://github.com/SaschaHeyer/ai-driven-engineering --auto-update
+```
+
+### Local Development
+If you have cloned this repository locally and want to test changes:
+```bash
+gemini extensions link ./workflow-extension
+```
+
+---
+
 ## 🎯 Motivation
 
 **"The entire purpose of this structured workflow is to do the hard clarification and planning work upfront."**
@@ -108,22 +124,6 @@ Once implementation is complete, we prepare for delivery. This command ensures y
 2.  **Update**: Fetches the latest `development` branch and rebases or merges to ensure your feature is up-to-date.
 3.  **Resolve**: Attempts to auto-resolve merge conflicts (asking for guidance if they are complex).
 4.  **PR**: Opens or updates a GitHub Pull Request with a concise summary and link to the Linear issue.
-
----
-
-## 📦 Installation
-
-You can install this extension directly from the repository:
-
-```bash
-gemini extensions install https://github.com/SaschaHeyer/ai-driven-engineering --auto-update
-```
-
-### Local Development
-If you have cloned this repository locally and want to test changes:
-```bash
-gemini extensions link ./workflow-extension
-```
 
 ---
 
