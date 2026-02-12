@@ -1,5 +1,7 @@
 # AI-Driven Engineering Workflow
 
+[![Watch the Promo Video](assets/promo.gif)](assets/promo.mp4)
+
 **Standardize and automate your engineering process with Gemini CLI.**
 
 This repository houses the **Workflow Extension** for Gemini CLI—a powerful set of autonomous tools designed to guide you through the entire software development lifecycle, from ambiguous idea to merged Pull Request.

@@ -1,2 +1,4 @@
 .env
 firebase-debug.log
+ai-driven-engineering-promo/node_modules/.bin/esbuild
+/ai-driven-engineering-promo/node_modules
