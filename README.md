@@ -8,6 +8,21 @@ It integrates seamlessly with **Linear** (for project management) and **GitHub**
 
 ---
 
+# 100%
+**Of my code is written by AI.**
+
+I run AI-driven engineering workshops with companies worldwide—both remote and on-site. Some invite their whole engineering department, others bring non-technical teams along for the ride.
+
+> "Last year summer, I asked myself a question: could I be an engineer without writing a single line of code? Not vibe coding—proper AI Driven Engineering.
+>
+> Today, my engineering life has been changed completely. I use AI agents for almost everything, and I write **0%** of the code myself.
+>
+> We are moving from a world of asking, **'What code do I write?'** to a world of asking, **'What problem do I need to solve?'**
+>
+> You are no longer limited by the syntax you know, the documentation you read, or the libraries you've memorized. You'll be limited only by your imagination and your token budget."
+
+---
+
 ## 📦 Installation
 
 You can install this extension directly from the repository:
