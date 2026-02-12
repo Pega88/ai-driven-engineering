@@ -113,17 +113,15 @@ Once implementation is complete, we prepare for delivery. This command ensures y
 
 ## 📦 Installation
 
-You can install this extension directly into your Gemini CLI.
+You can install this extension directly from the repository:
 
-### From GitHub (Recommended)
 ```bash
-gemini extensions install https://github.com/your-username/AI-Driven-Engineering
+gemini extensions install https://github.com/SaschaHeyer/ai-driven-engineering --auto-update
 ```
 
 ### Local Development
-If you have cloned this repository locally:
+If you have cloned this repository locally and want to test changes:
 ```bash
-cd AI-Driven-Engineering
 gemini extensions link ./workflow-extension
 ```
 
