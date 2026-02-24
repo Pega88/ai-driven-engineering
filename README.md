@@ -128,7 +128,8 @@ This step runs as a fully autonomous loop. The agent becomes your pair programme
 1.  **Pull Approved Plan**: It reads the engineer-approved `## PLAN` from Linear as the single source of truth.
 2.  **Execute**: It grabs the first unchecked sub-task, writes the code, and runs the tests.
 3.  **Sync**: After each step, it checks off the sub-task in Linear `[x]` and adds a progress comment.
-4.  **Repeat**: It immediately grabs the next sub-task and continues.
+4.  **Worktrees & Learnings**: It automatically utilizes the `git-worktree` skill to isolate work in a new branch, and the `document-learnings` skill to record solutions and fixes to `docs/learnings/`.
+5.  **Repeat**: It immediately grabs the next sub-task and continues.
 
 *It runs continuously until the plan is complete or it gets blocked, at which point it pauses to notify you.*
 
@@ -141,6 +142,24 @@ Once implementation is complete, we prepare for delivery. This command ensures y
 2.  **Update**: Fetches the latest `development` branch and rebases or merges to ensure your feature is up-to-date.
 3.  **Resolve**: Attempts to auto-resolve merge conflicts (asking for guidance if they are complex).
 4.  **PR**: Opens or updates a GitHub Pull Request with a concise summary and link to the Linear issue.
+
+---
+
+## 🧰 Included Skills
+
+This extension includes specialized agent skills to assist in the workflow. These are automatically invoked by the commands (specifically `/implement`) when needed:
+
+### 1. `git-worktree`
+Manages Git worktrees to allow isolated, parallel development. Instead of switching branches in your main directory, this skill:
+- Creates a new isolated worktree and branch for the feature or bug (e.g., `worktrees/feature/<ticket-id>`).
+- Copies over necessary environment files (like `.env`).
+- Ensures you can have multiple agents working on different tickets simultaneously without overlapping.
+
+### 2. `document-learnings`
+A frictionless way to capture solved problems and project-specific knowledge.
+- Automatically invoked when a solution is found or a problem is fixed during implementation.
+- Creates concise, searchable markdown files in `docs/learnings/` (e.g., `YYYY-MM-DD-short-topic.md`).
+- Helps agents surface past solutions to prevent repeating the same mistakes in future tasks.
 
 ---
 
