@@ -19,13 +19,19 @@ This summary should be high-level and suitable for a reviewer or stakeholder.
 
 ## 3. Visual Storyboard (Browser Automation)
 If the changes involve UI elements (React, HTML, CSS), you MUST create a visual storyboard:
-1. **Setup**: Identify the local development URL (default to http://localhost:3000 or search `package.json` for start scripts).
-2. **Action Loop**:
+1. **Setup**: Identify the local development URL (default to http://localhost:3000).
+2. **Targeting Changes**:
+   - Extract keywords from the `git diff` (e.g., new button labels, component names, updated text).
    - Use `browser:new_page` to open the app.
-   - Use `browser:take_screenshot` to capture the "Initial State".
-   - Use `browser:click`, `browser:type_text`, or `browser:hover` to demonstrate the new functionality.
-   - Use `browser:take_screenshot` at each significant step.
-3. **Capture**: Save these screenshots to the project's temporary directory.
+   - Use `browser:take_snapshot` to get the unique IDs (uids) of elements on the page.
+   - Match your keywords against the snapshot to find the uids of the elements you changed.
+3. **Scroll & Capture**:
+   - For each relevant element found:
+     - Use `browser:evaluate_script` with the element's `uid` to scroll it into the center of the viewport: `(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })`.
+     - Wait a moment for any animations to finish.
+     - Use `browser:take_screenshot` (without `fullPage=true`) to capture the specific context of that change.
+4. **Action Loop**:
+   - Use `browser:click` or `browser:hover` to demonstrate interactivity if applicable, scrolling to the next target as needed.
 
 ## 4. Sync to Linear
 - Update the Linear issue description.
