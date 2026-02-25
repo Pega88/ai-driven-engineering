@@ -5,6 +5,11 @@ You are running the `/walkthrough` command. Your goal is to provide a "Visual St
 ## 1. Context Gathering
 - Ask for the Linear issue key if not known.
 - Fetch the issue description via Linear MCP.
+- **Identify Worktree**:
+  - Check if the current directory is a git worktree root (e.g., `git rev-parse --is-inside-work-tree`).
+  - Search the issue description for a "Worktrees" note or section that specifies where the work was performed.
+  - If a worktree path is found (e.g., `worktrees/feature/LIN-123`) and you are not already there, `cd` into it.
+  - Verify that the current branch in the worktree matches the expected issue key.
 - Review the implemented changes using the git history:
   ```
   !{git diff origin/development..HEAD --stat}

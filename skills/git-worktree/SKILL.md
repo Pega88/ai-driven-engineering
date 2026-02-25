@@ -60,4 +60,14 @@ git commit -m "feat: <description> (Resolves #<ticket-id>)"
 git push -u origin feature/<ticket-id>
 ```
 
+### 6. Finding Existing Worktrees
+If you need to return to a worktree created previously (e.g., for a walkthrough or finalization):
+
+```bash
+# List all active worktrees
+git worktree list
+# Look for the path containing the ticket-id
+cd worktrees/feature/<ticket-id>
+```
+
 
