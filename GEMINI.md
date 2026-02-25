@@ -13,6 +13,9 @@ Generates a detailed implementation plan with tasks and sub-tasks based on the P
 ### `/workflow:implement`
 Autonomously executes the implementation plan. It reads the tasks from Linear, writes code, runs tests, commits changes, and updates the task status in Linear.
 
+### `/workflow:walkthrough` (Experimental)
+Generates a narrative summary and visual storyboard (screenshots/GIFs) of the implemented changes. It uses the Chrome DevTools MCP to capture UI proof and syncs it to the Linear issue.
+
 ### `/workflow:finalize`
 Prepares the feature for review. It ensures the worktree is clean, resolves conflicts (if any), creates or updates a GitHub PR, and updates the Linear issue.
 
@@ -21,4 +24,5 @@ Prepares the feature for review. It ensures the worktree is clean, resolves conf
 1.  **Define:** Use `/workflow:issue` to clarify what needs to be built.
 2.  **Plan:** Use `/workflow:tasks` to break it down into actionable steps.
 3.  **Build:** Use `/workflow:implement` to build it.
-4.  **Ship:** Use `/workflow:finalize` to wrap it up.
+4.  **Visualize:** Use `/workflow:walkthrough` (Experimental) to see what was built.
+5.  **Ship:** Use `/workflow:finalize` to wrap it up.

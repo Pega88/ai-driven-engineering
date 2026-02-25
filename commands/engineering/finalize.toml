@@ -6,7 +6,7 @@ You are running the `/finalize` custom command. Execute this workflow end to end
    a. Ask for the Linear issue key if it is not known.
    b. Fetch the issue description via the Linear MCP and read the `## PLAN` section.
    c. Confirm that every checkbox in the plan is `[x]`. If not, stop and tell the user to finish implementation first.
-   d. Record any "Worktrees" note in the plan; if absent, run `wt list` (or `git worktree list`) and identify entries whose branch name or path contains the issue key. Ask the user for clarification if multiple branches are ambiguous.
+   d. Record any "Worktrees" note in the plan; if absent, run `git worktree list` and identify entries whose branch name or path contains the issue key. Ask the user for clarification if multiple branches are ambiguous.
 
 2. Prepare each worktree
    a. For every identified worktree path, change into it.

@@ -50,7 +50,7 @@ This isn't for quick, one-line fixes. This workflow is designed for shipping **s
 **Why?**
 By investing time in the first two steps (Define & Plan), we enable our AI agents to run **autonomously for hours** with minimal supervision.
 
-We break the workflow into distinct phases: **Issue**, **Task**, and **Implement**. This structure provides the context and boundaries the agent needs to execute complex work without constantly asking, "What next?"
+We break the workflow into distinct phases: **Issue**, **Task**, **Implement**, and **Walkthrough**. This structure provides the context and boundaries the agent needs to execute complex work without constantly asking, "What next?"
 
 ---
 
@@ -67,7 +67,7 @@ Imagine one repository, but with 10, 15, or 20 different features and bugs, each
 
 They run in parallel, on the same codebase, completely isolated. **No conflicts. No stash hell.** You can test each agent's work in its own dedicated folder.
 
-This workflow is optimized for tools like [`wt` (by John Lindquist)](https://www.npmjs.com/package/wt) for managing worktrees, but standard `git worktree` commands work perfectly too.
+This workflow is optimized around standard `git worktree` commands, which are handled automatically for you by the included `git-worktree` skill.
 
 The `/implement` command [linked here](commands/engineering/implement.toml) is designed to handle this isolation automatically.
 
@@ -75,15 +75,16 @@ The `/implement` command [linked here](commands/engineering/implement.toml) is d
 
 ## 🚀 The Workflow
 
-We follow a strict **Define → Plan → Build → Ship** cycle. This extension provides a specialized AI agent command for each stage.
+We follow a strict **Define → Plan → Build → Walkthrough → Ship** cycle. This extension provides a specialized AI agent command for each stage.
 
 ```mermaid
 graph LR
     A[Start] --> B(/issue);
     B --> C(/tasks);
     C --> D(/implement);
-    D --> E(/finalize);
-    E --> F[Merged];
+    D --> E(/walkthrough);
+    E --> F(/finalize);
+    F --> G[Merged];
 ```
 
 | Stage | Command | Description |
@@ -91,7 +92,8 @@ graph LR
 | **1. Define** | `/issue` | Turns a rough idea into a comprehensive **Product Requirements Document (PRD)** or Bug Brief directly in Linear. |
 | **2. Plan** | `/tasks` | Analyzes the PRD and generates a detailed **Implementation Plan** with parent tasks and atomic sub-tasks. |
 | **3. Build** | `/implement` | **The Builder Agent.** Autonomously writes code, runs tests, and commits changes for every task in the plan (using Git Worktrees). |
-| **4. Ship** | `/finalize` | Polishes the worktree, resolves conflicts, and opens/updates the **GitHub Pull Request**. |
+| **4. Walkthrough** | `/walkthrough` | **(Experimental)** The Proof Agent. Generates a narrative summary and visual storyboard (screenshots/GIFs) of the changes. |
+| **5. Ship** | `/finalize` | Polishes the worktree, resolves conflicts, and opens/updates the **GitHub Pull Request**. |
 
 ---
 
@@ -133,7 +135,18 @@ This step runs as a fully autonomous loop. The agent becomes your pair programme
 
 *It runs continuously until the plan is complete or it gets blocked, at which point it pauses to notify you.*
 
-### 4. `/finalize` (Ship)
+### 4. `/walkthrough` (Experimental)
+**"Seeing is believing."**
+
+After implementation is complete, the agent provides a human-readable summary and visual proof of what was built. This is essential for stakeholders and reviewers.
+
+1.  **Narrative Summary**: It writes a concise overview of the problem, the solution, and the key logic/UI changes.
+2.  **Visual Storyboard**: Using the **Chrome DevTools MCP**, the agent automates your browser to navigate the app and capture screenshots of the new functionality.
+3.  **Sync**: The storyboard and summary are attached directly to the Linear issue under a `## Walkthrough` section.
+
+*This turns raw commits into a clear, professional update for the rest of the team.*
+
+### 5. `/finalize` (Ship)
 **"The finishing touch."**
 
 Once implementation is complete, we prepare for delivery. This command ensures your work is clean, consistent, and ready for review.
@@ -145,9 +158,9 @@ Once implementation is complete, we prepare for delivery. This command ensures y
 
 ---
 
-## 🧰 Included Skills
+## 🧰 Included Skills & MCPs
 
-This extension includes specialized agent skills to assist in the workflow. These are automatically invoked by the commands (specifically `/implement`) when needed:
+This extension includes specialized agent skills and integrations to assist in the workflow. These are automatically invoked by the commands when needed:
 
 ### 1. `git-worktree`
 Manages Git worktrees to allow isolated, parallel development. Instead of switching branches in your main directory, this skill:
@@ -161,6 +174,11 @@ A frictionless way to capture solved problems and project-specific knowledge.
 - Creates concise, searchable markdown files in `docs/learnings/` (e.g., `YYYY-MM-DD-short-topic.md`).
 - Helps agents surface past solutions to prevent repeating the same mistakes in future tasks.
 
+### 3. Chrome DevTools MCP
+Integrated browser automation that allows the agent to verify UI changes visually.
+- Used by `/walkthrough` to navigate local development servers.
+- Capable of taking screenshots and performing user actions (click, type, hover) to demonstrate new features.
+
 ---
 
 ## 🛠 Prerequisites
@@ -169,8 +187,9 @@ To use this workflow effectively, ensure you have the following configured in yo
 
 1.  **Gemini CLI** (Latest version)
 2.  **Linear MCP** (Configured with your API key)
-3.  **GitHub CLI** (`gh` tool installed and authenticated)
-4.  **Git** (Initialized repository)
+3.  **Chrome DevTools MCP** (Installed via the extension)
+4.  **GitHub CLI** (`gh` tool installed and authenticated)
+5.  **Git** (Initialized repository)
 
 ---
 

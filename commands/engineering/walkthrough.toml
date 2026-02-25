@@ -1,0 +1,46 @@
+description = "Generates a visual walkthrough and narrative summary of the implemented changes in Linear."
+prompt = """
+You are running the `/walkthrough` command. Your goal is to provide a "Visual Storyboard" and a concise narrative summary of the work just completed.
+
+## 1. Context Gathering
+- Ask for the Linear issue key if not known.
+- Fetch the issue description via Linear MCP.
+- Review the implemented changes using the git history:
+  ```
+  !{git diff origin/development..HEAD --stat}
+  ```
+
+## 2. Narrative Summary
+Write a 2-3 paragraph "Walkthrough" summary that explains:
+- **The Problem**: Briefly restate the goal.
+- **The Solution**: How the implementation addresses the goal.
+- **Key Changes**: Highlight the most important logic or UI updates.
+This summary should be high-level and suitable for a reviewer or stakeholder.
+
+## 3. Visual Storyboard (Browser Automation)
+If the changes involve UI elements (React, HTML, CSS), you MUST create a visual storyboard:
+1. **Setup**: Identify the local development URL (default to http://localhost:3000 or search `package.json` for start scripts).
+2. **Action Loop**:
+   - Use `browser:new_page` to open the app.
+   - Use `browser:take_screenshot` to capture the "Initial State".
+   - Use `browser:click`, `browser:type_text`, or `browser:hover` to demonstrate the new functionality.
+   - Use `browser:take_screenshot` at each significant step.
+3. **Capture**: Save these screenshots to the project's temporary directory.
+
+## 4. Sync to Linear
+- Update the Linear issue description.
+- Insert a `## Walkthrough` section at the end of the description.
+- Include the narrative summary.
+- **Storyboard Gallery**: Embed the screenshots in a numbered list or gallery format:
+  "### 🎬 Visual Storyboard
+  1. **Landing**: [Brief description of the screenshot]
+  2. **Interaction**: [Brief description of what happened]"
+- Attach the actual screenshot files to the Linear issue via `linear:create_attachment`.
+
+## 5. GIF Creation (Optional)
+If multiple screenshots were taken and `ffmpeg` is available on the system:
+- Suggest creating a `walkthrough.gif` to the user and ask for confirmation.
+- If confirmed, run the shell command to generate and attach the GIF.
+
+Confirm once the walkthrough is synced and the Linear issue is updated.
+"""

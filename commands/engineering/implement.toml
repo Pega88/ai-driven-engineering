@@ -50,7 +50,8 @@ There might be hundret of files use effective strategy that minimizes tool calls
 
 ## 6. Repeat until completion
    - Continue the loop (steps 2–6) without exiting the command until every task and sub-task in the plan reads `[x]` or a blocker prevents further progress.
-   - When everything is complete, confirm that the Linear issue status should move forward and await further instructions.
+   - When everything is complete, confirm that the Linear issue status should move forward.
+   - **IMPORTANT**: Recommend the user to run `/workflow:walkthrough` to generate a visual summary of the work before moving to `/workflow:finalize`.
 
 ## 7. Learnings:
 Documented learnings that might apply using
