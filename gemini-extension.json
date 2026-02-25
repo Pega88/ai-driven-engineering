@@ -1,6 +1,6 @@
 {
   "name": "ai-driven-engineering",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AI-Driven Engineering workflow commands for managing issues, tasks, implementation, and PRs.",
   "mcpServers": {
     "browser": {
