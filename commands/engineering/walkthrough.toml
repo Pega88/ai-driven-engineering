@@ -41,7 +41,8 @@ If the changes involve UI elements (React, HTML, CSS), you MUST create a visual 
   "### 🎬 Visual Storyboard
   1. **Landing**: [Brief description of the screenshot]
   2. **Interaction**: [Brief description of what happened]"
-- **Upload Attachments**: You MUST upload the actual screenshot files to the Linear issue using the `create_attachment` tool. This tool requires the file content to be **base64-encoded**.
+
+- **Upload Attachments**:we do not upload the screenshot to linear (the attachment tool is currently not working).
 
 ## 5. Local Walkthrough Artifact
 - Create a `walkthrough.md` file in the project root.
