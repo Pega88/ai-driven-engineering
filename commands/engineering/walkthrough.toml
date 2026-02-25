@@ -41,12 +41,19 @@ If the changes involve UI elements (React, HTML, CSS), you MUST create a visual 
   "### 🎬 Visual Storyboard
   1. **Landing**: [Brief description of the screenshot]
   2. **Interaction**: [Brief description of what happened]"
-- Attach the actual screenshot files to the Linear issue via `linear:create_attachment`.
+- **Upload Attachments**: You MUST upload the actual screenshot files to the Linear issue using the `create_attachment` tool. This tool requires the file content to be **base64-encoded**.
 
-## 5. GIF Creation (Optional)
+## 5. Local Walkthrough Artifact
+- Create a `walkthrough.md` file in the project root.
+- This file should contain:
+    - The narrative summary.
+    - The visual storyboard with local relative paths to the screenshots.
+- Ensure the screenshot files are saved in a stable location (e.g., `./walkthrough/`) and referenced correctly in the markdown.
+
+## 6. GIF Creation (Optional)
 If multiple screenshots were taken and `ffmpeg` is available on the system:
 - Suggest creating a `walkthrough.gif` to the user and ask for confirmation.
-- If confirmed, run the shell command to generate and attach the GIF.
+- If confirmed, run the shell command to generate and attach it to both the Linear issue and the local `walkthrough.md`.
 
-Confirm once the walkthrough is synced and the Linear issue is updated.
+Confirm once the walkthrough is synced, the local artifact is created, and the Linear issue is updated.
 """
