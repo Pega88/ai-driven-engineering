@@ -1,12 +1,13 @@
 {
-  "name": "AI-Driven Engineering",
+  "name": "ai-driven-engineering-marketplace",
+  "owner": {
+    "name": "Sascha Heyer"
+  },
   "plugins": [
     {
       "name": "ai-driven-engineering",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/SaschaHeyer/ai-driven-engineering.git"
-      }
+      "source": "https://github.com/SaschaHeyer/ai-driven-engineering.git",
+      "description": "AI-Driven Engineering workflow commands for managing issues, tasks, implementation, and PRs."
     }
   ]
 }
