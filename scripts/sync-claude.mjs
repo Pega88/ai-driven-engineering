@@ -19,6 +19,12 @@ if (fs.existsSync(geminiMdPath)) {
   console.log('✅ Copied GEMINI.md to CLAUDE.md');
 }
 
+// Helper to safely extract single-line string values from TOML
+function extractTomlValue(content, key) {
+  const match = content.match(new RegExp(`${key}\\s*=\s*"([^"]+)"`));
+  return match ? match[1] : null;
+}
+
 // 2. Parse TOML files and create Markdown files
 const files = fs.readdirSync(COMMANDS_DIR).filter(file => file.endsWith('.toml'));
 const commandPaths = [];
@@ -28,8 +34,7 @@ for (const file of files) {
   const content = fs.readFileSync(filePath, 'utf-8');
 
   // Extract description (e.g. description = "...")
-  const descMatch = content.match(/description\s*=\s*"([^"]+)"/);
-  const description = descMatch ? descMatch[1] : "";
+  const description = extractTomlValue(content, 'description');
 
   // Extract prompt block (handles prompt="""...""")
   const promptMatch = content.match(/prompt\s*=\s*"""([\s\S]*?)"""/);

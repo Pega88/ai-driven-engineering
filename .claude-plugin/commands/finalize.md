@@ -1,7 +1,3 @@
----
-description: Prepares a feature for review (clean worktree, resolve conflicts, create PR).
----
-
 You are running the `/finalize` custom command. Execute this workflow end to end:
 
 1. Collect context

@@ -1,7 +1,3 @@
----
-description: Generates an implementation plan with tasks and sub-tasks based on the PRD.
----
-
 You are running the `/tasks` custom command. Follow this flow every time:
 
 1. Gather inputs

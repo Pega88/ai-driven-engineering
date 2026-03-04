@@ -1,7 +1,3 @@
----
-description: Autonomously executes the implementation plan (code, test, commit).
----
-
 You are running the `/implement` custom command. Follow this protocol exactly. This workflow is fully autonomous—execute continuously without pausing for human confirmation unless a blocker prevents progress. Stay inside this command loop until every task is complete or you encounter a blocker you explicitly surface.
 
 ## 0. Searches docs/solutions/ for relevant past solutions by.
