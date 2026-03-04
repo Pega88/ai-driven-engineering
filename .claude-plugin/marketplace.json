@@ -1,5 +1,5 @@
 {
-  "name": "ai-driven-engineering",
+  "name": "ai-driven-engineering-marketplace",
   "owner": {
     "name": "Sascha Heyer",
     "email": "hello@saschaheyer.com"
@@ -9,7 +9,7 @@
       "name": "ai-driven-engineering",
       "description": "AI-Driven Engineering workflow commands for managing issues, tasks, implementation, and PRs.",
       "source": {
-        "type": "github",
+        "source": "github",
         "repo": "SaschaHeyer/ai-driven-engineering"
       }
     }
