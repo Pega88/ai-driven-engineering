@@ -1,0 +1,12 @@
+{
+  "name": "AI-Driven Engineering",
+  "plugins": [
+    {
+      "name": "ai-driven-engineering",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/SaschaHeyer/ai-driven-engineering.git"
+      }
+    }
+  ]
+}
