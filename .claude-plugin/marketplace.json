@@ -1,5 +1,5 @@
 {
-  "name": "ai-driven-engineering-marketplace",
+  "name": "ai-driven-engineering",
   "owner": {
     "name": "Sascha Heyer",
     "email": "hello@saschaheyer.com"
@@ -8,10 +8,12 @@
     {
       "name": "ai-driven-engineering",
       "description": "AI-Driven Engineering workflow commands for managing issues, tasks, implementation, and PRs.",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/SaschaHeyer/ai-driven-engineering.git"
-      }
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/git-worktree",
+        "./skills/document-learnings"
+      ]
     }
   ]
 }
