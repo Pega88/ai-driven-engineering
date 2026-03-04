@@ -27,16 +27,33 @@ I run AI-driven engineering workshops with companies worldwide—both remote and
 
 ## 📦 Installation
 
-You can install this extension directly from the repository:
-
+**For Gemini CLI:**
 ```bash
 gemini extensions install https://github.com/SaschaHeyer/ai-driven-engineering --auto-update
 ```
 
+**For Claude Code:**
+Open Claude Code in your terminal and run:
+```bash
+/plugin install ai-driven-engineering@SaschaHeyer/ai-driven-engineering
+```
+
 ### Local Development
 If you have cloned this repository locally and want to test changes:
+
+**For Gemini CLI:**
 ```bash
 gemini extensions link ./workflow-extension
+```
+
+**For Claude Code:**
+You can start Claude Code and point it to your local directory:
+```bash
+claude --plugin-dir /path/to/ai-driven-engineering
+```
+Or, add it directly via the CLI:
+```bash
+claude plugin add /path/to/ai-driven-engineering
 ```
 
 ---
@@ -195,7 +212,16 @@ To use this workflow effectively, ensure you have the following configured in yo
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow the existing patterns defined in `workflow-extension/commands/*.toml` and ensure any changes to the workflow logic are reflected in `workflow-extension/GEMINI.md`.
+Contributions are welcome! Please follow the existing patterns defined in `commands/engineering/*.toml` and ensure any changes to the workflow logic are reflected in `GEMINI.md`.
+
+**Updating Commands:**
+This repository supports both Gemini CLI and Claude Code. The Gemini `.toml` files are the "Source of Truth". 
+If you add or modify a command in `commands/engineering/`, or update `GEMINI.md`, you must run the sync script to generate the Claude Code equivalents before committing:
+
+```bash
+node scripts/sync-claude.mjs
+```
+*(Note: A GitHub Action is also configured to run this automatically on push to `main` as a safety net).*
 
 1.  Fork the repo.
 2.  Create a feature branch.
