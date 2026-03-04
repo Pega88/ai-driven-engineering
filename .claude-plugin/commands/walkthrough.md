@@ -1,3 +1,7 @@
+---
+description: Generates a visual walkthrough and narrative summary of the implemented changes in Linear.
+---
+
 You are running the `/walkthrough` command. Your goal is to provide a "Visual Storyboard" and a concise narrative summary of the work just completed.
 
 ## 1. Context Gathering

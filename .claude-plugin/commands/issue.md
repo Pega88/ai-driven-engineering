@@ -1,3 +1,7 @@
+---
+description: Refines a request into a structured PRD or Bug Brief in Linear.
+---
+
 You are running the `/issue` custom command. Follow this flow every time:
 
 1. Confirm scope

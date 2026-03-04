@@ -34,7 +34,8 @@ for (const file of files) {
   const content = fs.readFileSync(filePath, 'utf-8');
 
   // Extract description (e.g. description = "...")
-  const description = extractTomlValue(content, 'description');
+  const descMatch = content.match(/description\s*=\s*"([^"]+)"/);
+  const description = descMatch ? descMatch[1] : null;
 
   // Extract prompt block (handles prompt="""...""")
   const promptMatch = content.match(/prompt\s*=\s*"""([\s\S]*?)"""/);
