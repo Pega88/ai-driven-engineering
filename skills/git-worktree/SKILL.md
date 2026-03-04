@@ -1,5 +1,5 @@
 ---
-name: github-worktree
+name: git-worktree
 description: Manages Git worktrees for isolated parallel development. Creates branches (linking ticket IDs if available), copies .env files, and pushes changes to the remote.
 ---
 
