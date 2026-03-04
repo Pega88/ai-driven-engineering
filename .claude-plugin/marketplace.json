@@ -9,8 +9,8 @@
       "name": "ai-driven-engineering",
       "description": "AI-Driven Engineering workflow commands for managing issues, tasks, implementation, and PRs.",
       "source": {
-        "source": "github",
-        "repo": "SaschaHeyer/ai-driven-engineering"
+        "source": "url",
+        "url": "https://github.com/SaschaHeyer/ai-driven-engineering.git"
       }
     }
   ]
