@@ -16,8 +16,8 @@
     }
   },
   "skills": [
-    "./skills/git-worktree/SKILL.md",
-    "./skills/document-learnings/SKILL.md"
+    "./skills/git-worktree",
+    "./skills/document-learnings"
   ],
   "commands": [
     "./.claude-plugin/commands/finalize.md",
