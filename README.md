@@ -182,8 +182,8 @@ This extension includes specialized agent skills and integrations to assist in t
 ### 1. `git-worktree`
 Manages Git worktrees to allow isolated, parallel development. Instead of switching branches in your main directory, this skill:
 - Creates a new isolated worktree and branch for the feature or bug (e.g., `worktrees/feature/<ticket-id>`).
-- Copies over necessary environment files (like `.env`).
-- Ensures you can have multiple agents working on different tickets simultaneously without overlapping.
+- Evaluates the codebase for local files (like `.env` or configurations) and **symlinks** them from the original repository into the worktree.
+- Ensures you can have multiple agents working on different tickets simultaneously without overlapping while maintaining a functional local environment.
 
 ### 2. `document-learnings`
 A frictionless way to capture solved problems and project-specific knowledge.
